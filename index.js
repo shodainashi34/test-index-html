@@ -1,9 +1,8 @@
 const get_data_buitton = document.getElementById("get_data")
 
 async function get_data() {
-
     try {
-        const res = await fetch("https://python-fastapi-testshodai-cphxbvcmfwehg7f0.japanwest-01.azurewebsites.net/health/db", {
+        const res = await fetch("http://127.0.0.1:8000/health/db", {
             method: "GET"
         })
 
@@ -26,15 +25,16 @@ async function get_data() {
 
 get_data_buitton.addEventListener("click", get_data)
 
-const input_vehicleid = document.getElementById("vehicle_id").value
+
 const vehicle_send_button = document.getElementById("vehicleid_send")
 
 async function send_vehicleid() {
     try{
-        const res = await fetch("https://python-fastapi-testshodai-cphxbvcmfwehg7f0.japanwest-01.azurewebsites.net/items",{
+        const input_vehicleid = document.getElementById("vehicle_id").value
+        const res = await fetch("http://127.0.0.1:8000/items",{
             method: "POST",
             headers: {"Content-Type":"application/json"},
-            body: JSON.stringify({input_vehicleid})
+            body: JSON.stringify({title:input_vehicleid})
         })
 
         if (!res.ok){
