@@ -2,7 +2,7 @@ const get_data_buitton = document.getElementById("get_data")
 
 async function get_data() {
     try {
-        const res = await fetch("https://shodaitest-efamfshqejgqh6b6.japanwest-01.azurewebsites.net/health/db", {
+        const res = await fetch("https://python-fastapi-testshodai-cphxbvcmfwehg7f0.japanwest-01.azurewebsites.net/health/db", {
             method: "GET"
         })
 
@@ -31,7 +31,7 @@ const vehicle_send_button = document.getElementById("vehicleid_send")
 async function send_vehicleid() {
     try{
         const input_vehicleid = document.getElementById("vehicle_id").value
-        const res = await fetch("https://shodaitest-efamfshqejgqh6b6.japanwest-01.azurewebsites.net/items",{
+        const res = await fetch("https://python-fastapi-testshodai-cphxbvcmfwehg7f0.japanwest-01.azurewebsites.net/items",{
             method: "POST",
             headers: {"Content-Type":"application/json"},
             body: JSON.stringify({title:input_vehicleid})
